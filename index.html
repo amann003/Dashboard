@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AMAN KUSHWAHA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+<body>
+
+
+ <!-- Navbar -->
+  <nav class="navbar-2025">
+    <div class="navbar-brand-2025">
+      <i class="fas fa-chart-network"></i>
+      AMAN KUSHWAHA
+    </div>
+    
+    <!-- Floating Search -->
+    <div class="search-float">
+      <input id="searchInput" class="search-input-2025" type="text" placeholder="Search employees..." autocomplete="off">
+      <button id="searchBtn" class="search-btn-2025">
+        <i class="fas fa-search"></i>
+      </button>
+      <div id="searchResults" class="search-results-2025"></div>
+    </div>
+    
+    <!-- Modern Controls -->
+    <div class="controls-2025">
+      <select id="yearSelect" class="pill-select"></select>
+      <select id="monthSelect" class="pill-select">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+      
+      <label id="dayLabel" style="display:none;">
+        <select id="daySelect" class="pill-select"></select>
+      </label>
+      
+      <div class="pill-buttons">
+        <button id="monthlyBtn" class="pill-btn active">Month</button>
+        <button id="weeklyBtn" class="pill-btn">Week</button>
+        <button id="dailyBtn" class="pill-btn">Day</button>
+      </div>
+      
+      <select id="weekSelect" class="pill-select" style="display:none;">
+        <option value="1">Week 1 (1–7)</option>
+        <option value="2">Week 2 (8–14)</option>
+        <option value="3">Week 3 (15–21)</option>
+        <option value="4">Week 4 (22–end)</option>
+    </select>
+    </div>
+  </nav> 
+
+  <!-- Floating Sidebar -->
+<aside class="sidebar-2025">
+  <ul class="sidebar-nav-2025">
+    <li class="nav-item-2025">
+      <button data-view="dashboard" class="nav-link-2025 active">
+        <i class="fas fa-grip nav-icon-2025"></i>Dashboard
+      </button>
+    </li>
+    <li class="nav-item-2025">
+      <button data-view="departments" class="nav-link-2025">
+        <i class="fas fa-building nav-icon-2025"></i>Departments
+      </button>
+    </li>
+    <li class="nav-item-2025">
+      <button data-view="active" class="nav-link-2025">
+        <i class="fas fa-user-check nav-icon-2025"></i>Active Team
+      </button>
+    </li>
+    <li class="nav-item-2025">
+    <button data-view="left" class="nav-link-2025">
+        <i class="fas fa-user-minus nav-icon-2025"></i>Left
+    </button>
+    </li>
+    <li class="nav-item-2025">
+    <button data-view="vendor" class="nav-link-2025">
+        <i class="fas fa-handshake nav-icon-2025"></i>Vendors
+    </button>
+    </li>
+    
+    <!-- Theme Toggle Section -->
+    <li class="nav-item-2025" style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    
+    
+        <button id="themeToggle" class="nav-link-2025 theme-toggle">
+        <i id="themeIcon" class="fas fa-moon nav-icon-2025"></i>
+        <span id="themeText">Dark Mode</span>
+    </button>    
+    </li>
+</ul>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content-2025">
+    <div id="dashboardView">
+    <div id="statCards" class="bento-grid"></div>
+    <div id="chart-section"></div>
+    </div>
+
+    <div id="departmentsView" style="display:none"></div>
+    <div id="activeView" style="display:none"></div>
+    <div id="leftView" style="display:none"></div>
+    <div id="vendorView" style="display:none"></div>
+  </main>
+
+  <!-- Floating Action Button -->
+  <button id="printBtn" class="fab-2025">
+
+  </button>
+
+  <!-- Modern Modal -->
+  <div id="detailsModal" class="modal-2025">
+    <div class="modal-content-2025">
+      <div class="modal-header-2025">
+        <h3 id="detailsModalTitle" class="modal-title-2025"></h3>
+        <button id="closeDetailsModal" class="modal-close-2025">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body-2025">
+        <div id="detailsModalContent"></div>
+      </div>
+    </div>
+</div>
+
+
+</div>
+<script src="script.js"></script>
+</body>
+</html
