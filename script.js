@@ -1,5 +1,5 @@
  // Configuration
-    const API_URL = 'API LINK THAT HAS THE  EMPLOYEES DETAIL'; // api
+    const API_URL = 'https://ess.bhagwati.co/essapps/Api/employee/GetempData'; // api
     const EXCLUDED_EMPLOYEE_CODES = ['TEMP0004','TEMP0005','TEMP0006','TEMP0007']; 
     const EXCLUDED_VENDORS = ['vendor'];
 
